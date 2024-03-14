@@ -5,7 +5,6 @@ from os import sys
 import requests
 
 
-
 if __name__ == "__main__":
     # setting base url
     base_url = "https://jsonplaceholder.typicode.com/"
