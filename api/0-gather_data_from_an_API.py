@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """module for dummy api manipulation"""
-from os import sys
-import requests
 import json
-
+import requests
+from os import sys
 
 
 if __name__ == "__main__":
@@ -23,10 +22,10 @@ if __name__ == "__main__":
     # print(j_employee)
 
     # using "get" on json object to get name field
-    EMPLOYEE_NAME:str = j_employee.get("name")
+    e_name: str = j_employee.get("name")
 
     # checking previous operation
-    # print(EMPLOYEE_NAME)
+    # print(e_name)
 
     # requesting todos, converting to json object
     todos = requests.get(base_url + "todos/")
@@ -34,31 +33,27 @@ if __name__ == "__main__":
 
     # printing json object
     # print(j_todos)
-    # initializing count 
-    total_tasks = 0
+    # initializing count
+    total = 0
 
     # getting total tasks assigned to employee
     for task in j_todos:
         if task["userId"] == int(id):
-            total_tasks += 1
+            total += 1
 
-    # checking total_tasks operation
-    # print(total_tasks)
-
-
+    # checking total operation
+    # print(total)
     # initializing count
-    completed_tasks = 0
+    c_tasks = 0
     completed_task_list = []
 
     for task in j_todos:
-        if task["userId"] == int(id) and task["completed"] == True:
-            completed_tasks += 1
+        if task["userId"] == int(id) and task["completed"] is True:
+            c_tasks += 1
             completed_task_list.append(task["title"])
 
-    completed_task_list.insert(0, f"Employee {EMPLOYEE_NAME} is done with tasks({completed_tasks}/{total_tasks}):")
+    f_line: str = f"Employee {e_name} is done with tasks({c_tasks}/{total}):"
+    completed_task_list.insert(0, f_line)
 
-    # print(completed_tasks)
+    # print(c_tasks)
     print(*completed_task_list, sep='\n\t')
-
-
-
