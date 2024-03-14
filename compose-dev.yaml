@@ -4,8 +4,9 @@ services:
     - sleep
     - infinity
     image: ubuntu
-      build: Dockerfile
-      context: ./.devcontainer
+      build: 
+        context: ./.devcontainer
+        dockerfile: Dockerfile
     init: true
     volumes:
     - type: bind
