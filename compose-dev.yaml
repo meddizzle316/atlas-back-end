@@ -3,7 +3,7 @@ services:
     entrypoint:
     - sleep
     - infinity
-    image: ubuntu:20.04
+    image: ubuntu
       build: Dockerfile
       context: ./.devcontainer
     init: true
