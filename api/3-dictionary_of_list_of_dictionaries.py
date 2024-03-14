@@ -19,7 +19,7 @@ if __name__ == "__main__":
     # userId: int = j_employee.get("id")
 
     # creating attributes, and csv fields, list of dictionaries
-    attributes = ["completed", "task", "username"]
+    attributes = ["username", "task", "completed"]
     user_tasks = []
 
     # getting a list of ids
