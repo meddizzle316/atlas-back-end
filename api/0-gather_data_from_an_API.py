@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """module for dummy api manipulation"""
 import json
-import requests
 from os import sys
+import requests
+
 
 
 if __name__ == "__main__":
