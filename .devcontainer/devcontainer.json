@@ -1,0 +1,6 @@
+{
+    "name": "My Ubuntu Dev Container",
+    "build": {
+      "dockerfile": "Dockerfile"
+    }
+}
