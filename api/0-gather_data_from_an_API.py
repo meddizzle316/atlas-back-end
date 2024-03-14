@@ -10,22 +10,22 @@ if __name__ == "__main__":
     # setting base url
     base_url = "https://jsonplaceholder.typicode.com/"
 
-    #getting Employee name using params passed to file
+    # getting Employee name using params passed to file
     id = sys.argv[1]
-    #making sure I got the right id
+    # making sure I got the right id
     # print(id)
 
-    #requesting user with given id and converting it to json object
+    # requesting user with given id and converting it to json object
     employee = requests.get(base_url + "users/" + id)
     j_employee = employee.json()
 
-    #print out json employee object to make sure it worked
+    # print out json employee object to make sure it worked
     # print(j_employee)
 
-    #using "get" on json object to get name field
+    # using "get" on json object to get name field
     EMPLOYEE_NAME:str = j_employee.get("name")
 
-    #checking previous operation
+    # checking previous operation
     # print(EMPLOYEE_NAME)
 
     # requesting todos, converting to json object
@@ -34,19 +34,19 @@ if __name__ == "__main__":
 
     # printing json object
     # print(j_todos)
-    #initializing count 
+    # initializing count 
     total_tasks = 0
 
-    #getting total tasks assigned to employee
+    # getting total tasks assigned to employee
     for task in j_todos:
         if task["userId"] == int(id):
             total_tasks += 1
 
-    #checking total_tasks operation
+    # checking total_tasks operation
     # print(total_tasks)
 
 
-    #initializing count
+    # initializing count
     completed_tasks = 0
     completed_task_list = []
 
