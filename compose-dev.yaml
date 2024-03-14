@@ -4,6 +4,8 @@ services:
     - sleep
     - infinity
     image: ubuntu:20.04
+      build: Dockerfile
+      context: ./.devcontainer
     init: true
     volumes:
     - type: bind
